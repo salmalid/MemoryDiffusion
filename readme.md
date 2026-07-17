@@ -204,19 +204,6 @@ Benchmark (after placing subjects under `data\benchmark\<subject>\*.jpg`):
 ```powershell
 python evaluation\run_benchmark.py --data data\benchmark --out outputs\benchmark
 ```
-
----
-
-## 7. Roadmap (suggested phases)
-
-- [ ] **Phase 0 — Setup:** Environment, SD 1.5 + CLIP + FAISS loading, sanity generation.
-- [ ] **Phase 1 — Memory bank:** Encode reference images, build FAISS index, top-k retrieval.
-- [ ] **Phase 2 — Baseline conditioning:** Integrate IP-Adapter, generate a personalized image end-to-end.
-- [ ] **Phase 3 — Demo:** Gradio app (upload → prompt → result).
-- [ ] **Phase 4 — Evaluation:** Implement metrics, run against LoRA/DreamBooth baselines.
-- [ ] **Phase 5 — Research extensions:** Encoder fusion, retrieval/aggregation ablations, multi-subject memory.
-- [ ] **Phase 6 — Write-up:** Consolidate results into `paper.md`.
-
 ---
 
 ## 8. Known Challenges & Risks
@@ -228,20 +215,6 @@ python evaluation\run_benchmark.py --data data\benchmark --out outputs\benchmark
 - **Fair comparison** — baselines must be tuned reasonably, or the comparison is not credible.
 
 ---
+## MADE by : 
 
-## 9. Related Work (to cite in `paper.md`)
-
-- **DreamBooth**, **LoRA**, **Textual Inversion** — fine-tuning-based personalization.
-- **IP-Adapter** — decoupled cross-attention for image-prompt conditioning (closest mechanism).
-- **RAG / Retrieval-Augmented Generation** — the conceptual parent from the LLM world.
-- **Retrieval-Augmented Diffusion Models (RDM)** — prior work using retrieval to condition diffusion (positions this project's novelty: *personalization*-focused, training-free).
-
----
-
-## 10. Positioning / Novelty
-
-Retrieval-augmented diffusion exists; training-free personalization adapters (IP-Adapter) exist. **MemoryDiffusion's contribution is combining them into a persistent, editable, multi-subject memory system for personalization, and rigorously measuring whether it can substitute for fine-tuning.** The novelty is the *system framing + the empirical answer*, not any single component.
-
----
-
-*Final-year project (PFE). Status: design phase.*
+SALMA LIDAME
