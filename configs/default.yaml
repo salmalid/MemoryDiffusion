@@ -1,0 +1,32 @@
+# MemoryDiffusion — default configuration.
+# Every value here has a code-side default (pipeline.DEFAULTS); this file only overrides.
+
+device: null            # null = auto (cuda if available, else cpu)
+low_vram: false         # true -> enable_model_cpu_offload() (needs accelerate, saves VRAM)
+
+encoders:
+  clip_model: openai/clip-vit-large-patch14
+  dino_model: facebook/dinov2-base
+
+diffusion:
+  base_model: stable-diffusion-v1-5/stable-diffusion-v1-5   # maintained mirror of SD 1.5
+  ip_adapter_repo: h94/IP-Adapter
+  ip_adapter_subfolder: models
+  ip_adapter_weights: ip-adapter_sd15.bin
+  num_inference_steps: 30
+  guidance_scale: 7.5
+  negative_prompt: "lowres, bad anatomy, worst quality, low quality, watermark, blurry, deformed"
+
+retrieval:
+  top_k: 4              # memories retrieved per generation
+  aggregation: softmax  # mean | softmax | best | concat
+  temperature: 0.1      # softmax sharpness over retrieval scores
+
+memory:
+  store_dir: memory_store
+
+generation:
+  ip_adapter_scale: 0.7   # identity strength (0 = ignore memory, 1 = maximal)
+  scale_preset: uniform   # uniform | style_only | style_and_layout  (see conditioning/cross_attention.py)
+  height: 512
+  width: 512

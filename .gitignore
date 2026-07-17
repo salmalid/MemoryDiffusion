@@ -1,0 +1,18 @@
+# environments
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+
+# runtime artifacts
+memory_store/
+outputs/
+data/
+.gradio/
+
+# editors / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

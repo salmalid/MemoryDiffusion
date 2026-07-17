@@ -1,0 +1,13 @@
+# Install torch FIRST with the right CUDA build (see README Quickstart):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+diffusers>=0.27.0
+transformers>=4.38.0
+accelerate>=0.27.0
+safetensors>=0.4.0
+faiss-cpu>=1.7.4
+gradio>=4.26.0
+numpy>=1.24
+Pillow>=10.0
+PyYAML>=6.0
+matplotlib>=3.8
+tqdm>=4.66
